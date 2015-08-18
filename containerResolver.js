@@ -1,7 +1,7 @@
 'use strict';
-function containerResolver(id){
+function containerResolver(id, hostProperties){
 	var deferred = $.Deferred();
-	$.get('http://' + 'slave1' + ':' + '31300' +'/getid/'+id)
+	$.get('http://' + hostProperties.host + ':' + '31300' +'/getid/'+id)
 	.success(function(response){
 	        deferred.resolve(response);
 	})
