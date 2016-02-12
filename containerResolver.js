@@ -6,7 +6,7 @@ function containerResolver(id, hostProperties){
 	        deferred.resolve(response);
 	})
 	.error(function(){
-	        deferred.resolve(id);
+	        deferred.resolve(id.substring(0,12));
 	});
 	return deferred.promise();
 }
