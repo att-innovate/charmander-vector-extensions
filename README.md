@@ -22,6 +22,23 @@ ContainerMetadataService will automatically call your function as long as its co
 ---
 The filename should be the same as the function name.
 
-Update app.config.js with the file name within containerConfig.functionName
 
-The js file should be placed in the app/ directory.
+Update app.config.js to the following:
+
+    angular
+        .module('vector.config')
+        .constant('vectorConfig', {
+            'protocol': 'http',
+            'port': 44323,
+            'hostspec': 'localhost',
+            'interval': 2,
+            'window': 2,
+            'enableCpuFlameGraph': false,
+            'enableDiskLatencyHeatMap': false,
+            'enableContainerWidgets': true, // must be true to use container widgets
+        }).constant('containerConfig', {
+            'functionName': 'containerResolver', // must match the name of function in containerResolver.js
+            'externalAPI': true // must be true to call custom API
+        });
+
+The containerResolver.js file should be placed in the vector/src/app/ directory.
