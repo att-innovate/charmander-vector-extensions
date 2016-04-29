@@ -9,7 +9,7 @@
             if (idMap[id]){
                 return idMap[id];
             } else {
-                var url = 'urlhere;
+                var url = 'urlhere';
                 $http.get(url)
                 .then(function(response){
                     if (response !== '' )
